@@ -19,7 +19,18 @@ Zainstaluj [node](https://nodejs.org/en/), a następnie zainstaluj program _gulp
 
 ```sh
 npm install -g gulp
+npm install -g livereload # optional
 ```
+
+Następnie w katalogu głownym repo wykonaj:
+
+```sh
+gulp clean
+gulp docs
+gulp
+```
+
+### Nowy projekt H5C3J
 
 Utwórz nowe repozytorium i wykonaj te polecenia w głównym katalogu repozytorium.
 
