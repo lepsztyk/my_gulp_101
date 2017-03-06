@@ -55,13 +55,6 @@ touch src/scss/style.scss
 mkdir -p docs/assets/{stylesheets,javascript/vendor}
 touch docs/assets/javascript/bundle.js
 touch docs/assets/stylesheets/style.css
-```
-
-Zaczynamy.
-
-```sh
-npm install --save-dev jshint gulp-jshint jshint-stylish
-```
 
 TODO 1:
 
