@@ -65,7 +65,7 @@ npm install --save-dev jshint gulp-jshint jshint-stylish
 
 TODO 1:
 
-- [ ] [gulp-server-livereload](https://www.npmjs.com/package/gulp-server-livereload)
+- [ ] [gulp-server-livereload](https://www.npmjs.com/package/gulp-server-livereload) lub gulp-connect & gulp-livereload
 - [ ] concat and minify assets
 - [ ] [gulp-markdown](https://www.npmjs.com/package/gulp-markdown) lub
   [gulp-asciidoctor](https://github.com/asciidoctor/gulp-asciidoctor)
