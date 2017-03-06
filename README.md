@@ -52,9 +52,9 @@ mkdir -p src/{javascript,scss}
 touch src/javascript/main.js
 touch src/scss/style.scss
 # optional
-mkdir -p dist/assets/{stylesheets,javascript/vendor}
-touch dist/assets/javascript/bundle.js
-touch dist/assets/stylesheets/style.css
+mkdir -p docs/assets/{stylesheets,javascript/vendor}
+touch docs/assets/javascript/bundle.js
+touch docs/assets/stylesheets/style.css
 ```
 
 Zaczynamy.
@@ -65,7 +65,8 @@ npm install --save-dev jshint gulp-jshint jshint-stylish
 
 TODO 1:
 
-- [ ] [gulp-server-livereload](https://www.npmjs.com/package/gulp-server-livereload) lub gulp-connect & gulp-livereload
+- [ ] [gulp-server-livereload](https://www.npmjs.com/package/gulp-server-livereload)
+  lub gulp-connect (serwer _localhost:8080_) & gulp-livereload
 - [ ] concat and minify assets
 - [ ] [gulp-markdown](https://www.npmjs.com/package/gulp-markdown) lub
   [gulp-asciidoctor](https://github.com/asciidoctor/gulp-asciidoctor)
