@@ -6,12 +6,19 @@ docs// var gulp  = require('gulp'),
 //   return gutil.log('Gulp is running!')
 // });
 
-var gulp   = require('gulp'),
+var gulp = require('gulp'),
     jshint = require('gulp-jshint'),
-    sass   = require('gulp-sass');
+    sass = require('gulp-sass'),
+    livereload = require('gulp-livereload'),
+    del = require('del');
 
 // define the default task and add the watch task to it
 gulp.task('default', ['watch']);
+
+gulp.task('docs', ['html', 'css']);
+gulp.task('clean', function() {
+
+});
 
 // configure the jshint task
 gulp.task('jshint', function() {
@@ -30,9 +37,6 @@ gulp.task('html', function() {
   return gulp.src('src/html/*.html')
     .pipe(gulp.dest('docs'));
 });
-
-gulp.task('docs', ['html', 'css']);
-
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
