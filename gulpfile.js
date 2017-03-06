@@ -17,7 +17,8 @@ gulp.task('default', ['watch']);
 
 gulp.task('docs', ['html', 'css']);
 gulp.task('clean', function() {
-
+  // use a return to ensure the task finishes before exiting
+  return del(['dist/assets/**', 'dist/*.html']);
 });
 
 // configure the jshint task
