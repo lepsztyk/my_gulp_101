@@ -1,4 +1,4 @@
-// var gulp  = require('gulp'),
+docs// var gulp  = require('gulp'),
 //     gutil = require('gulp-util');
 //
 // create a default task and just log a message
@@ -23,17 +23,20 @@ gulp.task('jshint', function() {
 gulp.task('css', function() {
   return gulp.src('src/scss/**/*.scss')
     .pipe(sass())
-    .pipe(gulp.dest('dist/assets/stylesheets'));
+    .pipe(gulp.dest('docs/assets/stylesheets'));
 });
 
 gulp.task('html', function() {
-  return gulp.src('src/index.html')
-    .pipe(gulp.dest('dist'));
+  return gulp.src('src/html/*.html')
+    .pipe(gulp.dest('docs'));
 });
+
+gulp.task('docs', ['html', 'css']);
+
 
 // configure which files to watch and what tasks to use on file changes
 gulp.task('watch', function() {
   gulp.watch('src/javascript/**/*.js', ['jshint']);
   gulp.watch('src/scss/**/*.scss', ['css']);
-  gulp.watch('src/index.html', ['html']);
+  gulp.watch('src/html/*.html', ['html']);
 });
