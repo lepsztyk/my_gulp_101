@@ -33,7 +33,7 @@ gulp.task('jshint', function() {
 
 gulp.task('css', function() {
   return gulp.src('src/scss/**/*.scss')
-    .pipe(sass())
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('docs/assets/stylesheets'))
     .pipe(livereload());
 });
