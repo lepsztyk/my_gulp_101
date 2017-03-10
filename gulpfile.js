@@ -18,6 +18,7 @@ const del = require('del');
 gulp.task('default', ['connect', 'watch']);
 
 gulp.task('docs', ['html', 'css']);
+
 gulp.task('clean', function() {
   return del(['docs/assets/**', 'docs/*.html']).then(paths => {
     console.log('Files and folders to be deleted:\n', paths.join('\n'));
