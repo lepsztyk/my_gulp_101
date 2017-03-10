@@ -72,13 +72,6 @@ TODO 2:
 - [ ] [Setup a new project with Phenomic](https://phenomic.io/docs/setup/)
 
 
-### Uruchamiamy stronę na GitHub
-
-```sh
-rename dist docs # ?
-```
-
-
 ### Uruchamiamy stronę na Firebase
 
 TODO
