@@ -37,24 +37,11 @@ Utwórz nowe repozytorium i wykonaj te polecenia w głównym katalogu repozytori
 ```sh
 npm init
 npm install --save-dev gulp # npm i -D gulp
-# dodaj do pliku .gitignore katalogi node_modules i dist
-
-npm ls graceful-fs # ?
+# dodaj do pliku .gitignore katalogi node_modules
 ```
 
 
 ### HTML5 + CSS3 + ES6
-
-Zmodyfikowany przykład z bloga J. Rexroad, [Automate Your Tasks Easily with Gulp.js](https://scotch.io/tutorials/automate-your-tasks-easily-with-gulp-js).
-
-```sh
-mkdir -p src/{javascript,scss}
-touch src/javascript/main.js
-touch src/scss/style.scss
-# optional
-mkdir -p docs/assets/{stylesheets,javascript/vendor}
-touch docs/assets/javascript/bundle.js
-touch docs/assets/stylesheets/style.css
 
 TODO 1:
 
