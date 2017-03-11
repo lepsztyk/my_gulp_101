@@ -1,5 +1,8 @@
 ## Przykładowy plik w notacji ASCIIDoctor
 
+.Piękny widok
+image:sunset.jpg[Sunset,500,500,role="left"]
+
 [cols="2*", options="header"]
 |===
 |Name of Column 1
