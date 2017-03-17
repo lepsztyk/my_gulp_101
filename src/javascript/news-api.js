@@ -60,25 +60,41 @@ xhr.send();
 //   http://eloquentjavascript.net/17_http.html
 
 // API key for
-//  Referer:https://h5c3j.github.io/my_gulp_101/news-api.html
+//  Referer: https://h5c3j.github.io/my_gulp_101/news-api.html
 
-var url1 = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=e070a4527305463a8ab5c15a461e53e0';
+// invalid key
+var url1 = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=e070a4527305463a8ab5c15a461e53e';
+// valid key
 var url2 = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=e070a4527305463a8ab5c15a461e53e0'
 
-var req = new XMLHttpRequest();
+function get(url) {
+  return new Promise(function(succeed, fail) {
+    var req = new XMLHttpRequest();
+    req.open("GET", url, true);
+    req.addEventListener("load", function() {
+      if (req.status < 400)
+        succeed(req.responseText);
+      else
+        fail(new Error("Request failed: " + req.statusText));
+    });
+    req.addEventListener("error", function() {
+      fail(new Error("Network error"));
+    });
+    req.send(null);
+  });
+}
 
-req.open('GET', url1, true);
-req.addEventListener("load", function() {
-  console.log("Response status:", req.status);
-  console.log(JSON.parse(req.responseText));
+get(url1).then(function(text) {
+  console.log("data.txt: " + text);
+}, function(error) {
+  console.log("Failed to fetch data.txt: " + error);
 });
-req.addEventListener("error", function() {
-  var response = JSON.parse(req.responseText);
-  // console.log("Response status:", response.status);
-  // console.log(response.message);
-  console.log(response);
-});
-req.send(null);
 
-req.open('GET', url2, true);
-req.send(null);
+get(url2).then(
+  function(text) {
+    console.log("data.txt: " + text);
+  },
+  function(error) {
+    console.log("Failed to fetch data.txt: " + error);
+  }
+);
