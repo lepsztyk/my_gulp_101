@@ -17,7 +17,7 @@ const del = require('del');
 // define the default task and add the watch task to it
 gulp.task('default', ['connect', 'watch']);
 
-gulp.task('docs', ['html', 'css']);
+gulp.task('docs', ['html', 'css', 'javascript']);
 
 gulp.task('clean', function() {
   return del(['docs/assets/**', 'docs/*.html']).then(paths => {
@@ -26,10 +26,12 @@ gulp.task('clean', function() {
 });
 
 // configure the jshint task
-gulp.task('jshint', function() {
+gulp.task('javascript', function() {
   return gulp.src('src/javascript/**/*.js')
     .pipe(jshint())
-    .pipe(jshint.reporter('jshint-stylish'));
+    .pipe(jshint.reporter('jshint-stylish'))
+    .pipe(gulp.dest('docs/assets/js'))
+    .pipe(livereload());
 });
 
 gulp.task('css', function() {
@@ -51,7 +53,7 @@ gulp.task('watch', function() {
   //   1. livereload docs
   //   2. gulp
 
-  gulp.watch('src/javascript/**/*.js', ['jshint']);
+  gulp.watch('src/javascript/**/*.js', ['javascript']);
   gulp.watch('src/scss/**/*.scss', ['css']);
   gulp.watch('src/html/*.html', ['html']);
 });
