@@ -21,11 +21,6 @@
 // API key for
 //  Referer: https://h5c3j.github.io/my_gulp_101/news-api.html
 
-// invalid key
-var url1 = 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=e070a4527305463a8ab5c15a461e53e';
-// valid key
-var url2 = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=e070a4527305463a8ab5c15a461e53e0'
-
 function get(url) {
   return new Promise(function(succeed, fail) {
     var req = new XMLHttpRequest();
@@ -58,5 +53,7 @@ function getJSON(url, tmpl) {
     document.querySelector("header").insertAdjacentHTML('afterend', html)
   });
 }
+
+var url2 = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=e070a4527305463a8ab5c15a461e53e0'
 
 getJSON(url2, template);
