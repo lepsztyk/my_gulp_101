@@ -14,6 +14,7 @@
 //     }, ...
 //    ]
 // }
+
 // Asynchronous Requests
 //   http://eloquentjavascript.net/17_http.html
 
@@ -42,14 +43,25 @@ function get(url) {
   });
 }
 
-get(url1).then(JSON.parse, function(error) {
-  console.log('Failed to fetch data: ' + error);
-});
+// Simple Handlebars iterators
+//   http://handlebarsjs.com/block_helpers.html
+// insertAdjacentHTML
+//   https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
 
-function getJSON(url) {
-  return get(url).then(JSON.parse);
+var source = document.querySelector("#article-template").innerHTML;
+var template = Handlebars.compile(source);
+
+function getJSON(url, tmpl) {
+  get(url).then(function(text) {
+    var json = JSON.parse(text);
+    var html = tmpl(json);
+    console.log(html)
+  });
 }
 
-console.dir(getJSON(url2));
+getJSON(url2, template);
 
-// https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
+// var source = document.querySelector("#entry-template").innerHTML;
+// var template = Handlebars.compile(source);
+// var context = {title: "My New Post", body: "This is my first post!"};
+// var html = template(context);

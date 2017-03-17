@@ -118,3 +118,16 @@ xhr.onerror = function() {
 };
 xhr.send();
 ```
+
+Promises…
+
+```js
+get(url2).then(
+  function(text) {
+    console.log(JSON.parse(text).articles[1].title);
+  },
+  function(error) {
+    console.log('Failed to fetch data: ' + error);
+  }
+);
+```
