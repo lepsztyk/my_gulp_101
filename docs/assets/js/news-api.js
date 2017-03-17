@@ -14,10 +14,9 @@
 //     }, ...
 //    ]
 // }
-
+//
 // Asynchronous Requests
 //   http://eloquentjavascript.net/17_http.html
-
 // API key for
 //  Referer: https://h5c3j.github.io/my_gulp_101/news-api.html
 
@@ -48,12 +47,11 @@ var template = Handlebars.compile(source);
 
 function getJSON(url, tmpl) {
   get(url).then(function(text) {
-    var json = JSON.parse(text);
-    var html = tmpl(json);
-    document.querySelector("header").insertAdjacentHTML('afterend', html)
+    var html = tmpl(JSON.parse(text));
+    document.querySelector("header").insertAdjacentHTML('afterend', html);
   });
 }
 
-var url2 = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=e070a4527305463a8ab5c15a461e53e0'
+var the_next_web = 'https://newsapi.org/v1/articles?source=the-next-web&sortBy=latest&apiKey=e070a4527305463a8ab5c15a461e53e0';
 
-getJSON(url2, template);
+getJSON(the_next_web, template);
