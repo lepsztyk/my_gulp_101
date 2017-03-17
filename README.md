@@ -82,6 +82,8 @@ Eloquent JavaScript:
 * http://eloquentjavascript.net/13_dom.html
 * http://eloquentjavascript.net/14_event.html
 
+CORS:
+
 * [Using CORS](https://www.html5rocks.com/en/tutorials/cors/)
 * [HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
 
