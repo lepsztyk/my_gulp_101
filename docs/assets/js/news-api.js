@@ -29,36 +29,27 @@ function get(url) {
   return new Promise(function(succeed, fail) {
     var req = new XMLHttpRequest();
     req.open("GET", url, true);
-    req.addEventListener("load", function() {
+    req.addEventListener('load', function() {
       if (req.status < 400)
         succeed(req.responseText);
       else
-        fail(new Error("Request failed: " + req.statusText));
+        fail(new Error('Request failed: ' + req.statusText));
     });
-    req.addEventListener("error", function() {
-      fail(new Error("Network error"));
+    req.addEventListener('error', function() {
+      fail(new Error('Network error'));
     });
     req.send(null);
   });
 }
 
-get(url1).then(function(text) {
-  console.log("data.txt: " + text);
-}, function(error) {
-  console.log("Failed to fetch data.txt: " + error);
+get(url1).then(JSON.parse, function(error) {
+  console.log('Failed to fetch data: ' + error);
 });
-
-get(url2).then(
-  function(text) {
-    console.log("data.txt: " + text);
-  },
-  function(error) {
-    console.log("Failed to fetch data.txt: " + error);
-  }
-);
 
 function getJSON(url) {
   return get(url).then(JSON.parse);
 }
+
+console.dir(getJSON(url2));
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
