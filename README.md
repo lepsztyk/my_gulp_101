@@ -73,6 +73,11 @@ TODO 2:
 TODO
 
 
+### Handlebars templates
+
+* [Try Handlebars in a browser](http://tryhandlebarsjs.com/)
+
+
 ### AJAX
 
 Eloquent JavaScript:

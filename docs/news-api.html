@@ -8,6 +8,9 @@
   </head>
 <body>
 
+  <!-- use a handlebars templates to generate a list of articles -->
+  <!-- http://handlebarsjs.com/installation.html -->
+
   <script id="article-template" type="text/x-handlebars-template">
     {{#each articles}}
       <article>
@@ -21,6 +24,8 @@
     <h1>My News</h1>
   </header>
 
+  <h2>Other articles</h2>
+
   <article>
     <h2>Q wiośnie</h2>
     <small>2017-03-16T23:04:04Z (publishedAt)</small>
@@ -28,10 +33,6 @@
       Pierwsze oznaki wiosny. Dzień jest coraz dłuższy.
     </p>
   </article>
-
-  <!-- use a handlebars templates to generate a list of articles -->
-  <!-- Try Handlebars: http://tryhandlebarsjs.com/ -->
-  <!-- http://handlebarsjs.com/installation.html -->
 
   <article>
     <h2 class="title">Netflix is changing its star ratings to a thumbs up/down system</h2>
