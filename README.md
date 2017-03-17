@@ -71,3 +71,41 @@ TODO 2:
 ### Uruchamiamy stronę na Firebase
 
 TODO
+
+
+### AJAX
+
+* [Using CORS](https://www.html5rocks.com/en/tutorials/cors/)
+* [HTTP access control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)
+
+The code below is copied from http://www.test-cors.org/.
+
+```js
+var createCORSRequest = function(method, url) {
+  var xhr = new XMLHttpRequest();
+  if ("withCredentials" in xhr) {
+    // Most browsers.
+    xhr.open(method, url, true);
+  } else if (typeof XDomainRequest != "undefined") {
+    // IE8 & IE9
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+};
+
+var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
+var method = 'GET';
+var xhr = createCORSRequest(method, url);
+
+xhr.onload = function() {
+  console.log('CORS is enabled');
+};
+xhr.onerror = function() {
+  console.log('CORS requests are not available');
+};
+xhr.send();
+```

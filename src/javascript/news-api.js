@@ -3,43 +3,6 @@
 // http://eloquentjavascript.net/13_dom.html
 // http://eloquentjavascript.net/14_event.html
 
-// Using CORS
-//   https://www.html5rocks.com/en/tutorials/cors/
-// HTTP access control (CORS)
-//   https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
-
-// the code below is from http://www.test-cors.org/
-
-var createCORSRequest = function(method, url) {
-  var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-    // Most browsers.
-    xhr.open(method, url, true);
-  } else if (typeof XDomainRequest != "undefined") {
-    // IE8 & IE9
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-  } else {
-    // CORS not supported.
-    xhr = null;
-  }
-  return xhr;
-};
-
-var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
-var method = 'GET';
-var xhr = createCORSRequest(method, url);
-
-xhr.onload = function() {
-  console.log('CORS is enabled');
-};
-
-xhr.onerror = function() {
-  console.log('CORS requests are not available');
-};
-
-xhr.send();
-
 // News API
 // {
 //   "status": "ok",
@@ -98,3 +61,9 @@ get(url2).then(
     console.log("Failed to fetch data.txt: " + error);
   }
 );
+
+function getJSON(url) {
+  return get(url).then(JSON.parse);
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML
