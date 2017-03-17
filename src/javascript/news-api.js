@@ -55,13 +55,8 @@ function getJSON(url, tmpl) {
   get(url).then(function(text) {
     var json = JSON.parse(text);
     var html = tmpl(json);
-    console.log(html)
+    document.querySelector("header").insertAdjacentHTML('afterend', html)
   });
 }
 
 getJSON(url2, template);
-
-// var source = document.querySelector("#entry-template").innerHTML;
-// var template = Handlebars.compile(source);
-// var context = {title: "My New Post", body: "This is my first post!"};
-// var html = template(context);
